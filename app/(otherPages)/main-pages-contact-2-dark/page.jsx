@@ -7,17 +7,13 @@ const ParallaxContainer = dynamic(
   }
 );
 
-import Faq from "@/components/common/Faq";
-import Map from "@/components/common/Map";
 import Footer5 from "@/components/footers/Footer5";
 import Header5 from "@/components/headers/Header5";
 import Contact from "@/components/homes/home-5/Contact";
 import { boldMultipage } from "@/data/menu";
 export const metadata = {
-  title:
-    "Contact Us",
-  description:
-    "",
+  title: "Contact Us",
+  description: "",
 };
 export default function MainAboutPage1Dark() {
   return (
@@ -86,7 +82,6 @@ export default function MainAboutPage1Dark() {
                 {/* <hr className="mt-0 mb-0 white" /> */}
                 {/* End Divider */}
                 {/* FAQ Section */}
-                
               </>
             </main>
             <footer className="bg-dark-2 light-content footer z-index-1 position-relative">

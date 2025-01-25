@@ -31,7 +31,7 @@ export default function MainAboutPage3() {
     <>
       <div className="theme-main">
         <div className="page" id="top">
-          <nav className="main-nav dark light-after-scroll transparent stick-fixed wow-menubar">
+          <nav className="main-nav dark dark-mode transparent stick-fixed wow-menubar">
             <Header5 links={boldMultipage} />
           </nav>
           <main id="main">
