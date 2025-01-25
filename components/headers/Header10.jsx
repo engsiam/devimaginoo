@@ -1,15 +1,21 @@
 "use client";
+
 import { toggleMobileMenu } from "@/utlis/toggleMobileMenu";
-import Nav from "./components/Nav";
 import Image from "next/image";
-import LanguageSelect from "./components/LanguageSelect";
 import Link from "next/link";
-export default function Header10({ links }) {
+import LanguageSelect from "./components/LanguageSelect";
+import Nav from "./components/Nav";
+
+export default function Header10({ links = [] }) {
+  // Validate the `links` prop to ensure it's an array with valid data
+  if (!Array.isArray(links) || links.length === 0) {
+    console.warn("Invalid or empty links prop:", links);
+    return null; // Safely return null if no links are provided
+  }
+
   return (
     <div className="main-nav-sub full-wrapper">
-      {/* Logo  (* Add your text or image to the link tag. Use SVG or PNG image format. 
-              If you use a PNG logo image, the image resolution must be equal 200% of the visible logo
-              image size for support of retina screens. See details in the template documentation. *) */}
+      {/* Logo */}
       <div className="nav-logo-wrap local-scroll">
         <a href="#top" className="logo font-alt">
           <Image
@@ -20,6 +26,7 @@ export default function Header10({ links }) {
           />
         </a>
       </div>
+
       {/* Mobile Menu Button */}
       <div
         onClick={toggleMobileMenu}
@@ -30,21 +37,22 @@ export default function Header10({ links }) {
         <i className="mobile-nav-icon" />
         <span className="visually-hidden">Menu</span>
       </div>
+
       {/* Main Menu */}
       <div className="inner-nav desktop-nav">
         <ul className="clearlist scroll-nav local-scroll scrollspyLinks">
           <Nav links={links} />
         </ul>
-        <ul className="items-end clearlist local-scroll">
-          {/* Languages */}
 
+        <ul className="items-end clearlist local-scroll">
+          {/* Language Selector */}
           <LanguageSelect />
 
-          {/* End Languages */}
-          {links[0].href.includes("/") ? (
+          {/* Call to Action */}
+          {links?.[0]?.href?.includes("/") ? (
             <li>
               <Link
-                href={links[links.length - 1].href}
+                href={links[links.length - 1]?.href || "#"}
                 className="opacity-1 no-hover"
               >
                 <span className="link-hover-anim" data-link-animate="y">
