@@ -4,7 +4,7 @@ import Card from "./Card";
 const CardList = () => {
   const cards = [
     {
-      image: "assets/images/campaigns/floating.png",
+      image: "assets/images/campaigns/floating.jpg",
       title: "Feel the Fragrance. See the Elegance.",
       subtitle: "Spec Dior Commercial",
      // year: "2024",
